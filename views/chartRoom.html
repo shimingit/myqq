@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>chartRoom.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="CSS/chartRoom.css">
+    <link rel="stylesheet" type="text/css" href="CSS/easyui.css">
+	<link rel="stylesheet" type="text/css" href="CSS/icon.css">
+	<script type="text/javascript" src="JS/jquery.min.js"></script>
+	<script type="text/javascript" src="JS/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="JS/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="JS/chat.js"></script>
+	<script>
+	
+         $(document).ready(function()
+           {
+           		$('#w').window('setTitle','小石頭聊天室');
+					$('#w').window('open');
+					$('#ff').form('clear');
+					$('#ff').attr("action","brequest");
+					$("#formid").val(formid);
+           });
+	
+	</script>
+  </head>
+  
+  <body class="bystl" >
+	   <div style="width:100%" align="center">
+ 			<h2>Welcome to XiaoShiTou chatRoom,this is a simple platform for chatting.</h2>
+    	</div>
+  
+  <div id="w" class="easyui-window" data-options="iconCls:'icon-save',closed:true,modal:true">
+		<div style="text-align:center; padding:1px;">
+  
+  	<form id="ff" action="">
+    <div class="box1" style="float:left">
+    	<div style="width:540px;float: left">
+    	<div class="box2" id="chartContent" style="margin: 5;overflow-y: scroll">
+			
+			<div id="content" style="text-align:left;">
+				
+			</div>
+
+    	</div>
+    	
+    	<div style="height:30px;border-width: 0;padding:4px" align="left">
+ 		 <select name="wordcolor" id="wordcolor" style="width:80px" >
+  			<option value="black" selected="selected">黑色</option>
+  			<option value="#FFC0CB">粉红</option>
+ 			<option value="#800080">紫色</option>
+ 			<option value="blue">蓝色</option>
+  			<option value="#008000">绿色</option>
+  			<option value="#808000">橄榄</option>
+  			<option value="#FFA500">香橙</option>
+  			<option value="#CD853F">秘鲁</option>
+  		</select>
+  		<select name="wordsize" id="wordsize" style="width:80px">
+  			<option value="13">13号</option>
+  			<option value="14">14号</option>
+  			<option value="15" selected="selected">15号</option>
+  			<option value="16">16号</option>
+  			<option value="17">17号</option>
+  			<option value="18">18号</option>
+  			<option value="19">19号</option>
+  		</select>
+  		<select name="face" id="face" style="width:80px">
+  			<option value="3" selected="selected">微笑</option>
+  			<option value="4">难过</option>
+  			<option value="5">开心</option>
+  			<option value="6">得意</option>
+  			<option value="7">发呆</option>
+  			<option value="8">可爱</option>
+  			<option value="9">love</option>
+  		</select>
+		
+    		<input type="button" id="clearlog" value="清空记录" style="background-color:lightgrey;float: right" onclick="clearContent();"/>
+    		<input type="button" id="viewlog" value="查看聊天记录" style="background-color:lightgrey;float:right" onclick="reShowContent();"/>
+    	</div> 
+    	<div  style="height:30px;padding:4px">
+    		<input class="text" type="text" id="info" />
+    		<input type="button" id="clearinfo"  value="清 空" style="background-color:lightgrey;float: right" onclick="window.close();"/>
+    		<input type="submit" id="sendinfo" value="发 送" style="background-color:lightgrey;float: right"/>
+    	</div>
+    	</div>
+    	
+    	<div style="width:190px;height:100%;float: right;border: 1px solid lightgray;text-align:left">
+			<div style="color:brown">在线用户列表：</div>
+    		<div id="ulist" style="padding:4px">
+			</div>
+    	</div>
+    	
+    </div>
+    
+    
+    </form>
+    
+    </div>
+    </div>
+  </body>
+</html>
